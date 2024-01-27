@@ -12,6 +12,10 @@ APP.use('/hotels', routes)
 
 APP.use(cors());
 APP.use(express.json());
+APP.get('/',(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send('Api is running')
+}
 // APP.use(cookieParser())
 
 const MONGODB_URI= process.env.MONGODB_URI
